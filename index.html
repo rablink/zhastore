@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zha Store - Jasa Followers Aman & Murah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #dfb1c0;
+      color: #333;
+    }
+    body {
+  background: linear-gradient(#e9cbd200, #e9cbd200),  
+              url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+    header {
+      background: linear-gradient(135deg, #abc5ec, #6d9dbd);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-top: 10px;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      color: #000;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #020202;
+    }
+
+    .prices {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .price-card {
+      background: #97bce7;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .price-card h3 {
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-align: center;
+    }
+    #scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 999;
+}
+#scrollTopBtn:hover {
+  background-color: #2563eb;
+}
+
+    .price-card ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+      color: #000000;
+    }
+    .price-card ul li::before {
+      content: "✔ ";
+      color: #22c55e;
+    }
+    .price-card button {
+      background: #5fb956;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      width: 100%;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    .price-card button:hover {
+      background: #95ddb9;
+    }
+
+   .slider-container {
+  position: relative;
+  width: 250px; /* Sedikit lebih besar dari gambar 250px */
+  height: 470px; /* Sesuaikan tinggi gambar asli */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 2px; /* Jangan terlalu besar kayak 100px */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+   }
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 250px 250; /* ✅ Tambahkan ruang atas dan bawah */
+}
+
+.slide img {
+  width: 250px;            /* Ukuran kecil sesuai keinginan */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Tombol panah di kiri dan kanan gambar, tidak terlalu jauh */
+.slider-buttons {
+  position: absolute;
+  top: 50%;
+  width: 250px; /* Lebar mengikuti gambar */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* Agar tidak menghalangi elemen lain */
+}
+
+.slider-buttons button {
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  padding: 4px 6px;         /* Lebih kecil */
+  font-size: 1rem;          /* Sedikit lebih kecil */
+  cursor: pointer;
+  border-radius: 8px;       /* Sudut tidak terlalu bulat */
+  pointer-events: auto;
+  transition: background 0.3s;
+}
+
+.slider-buttons button:hover {
+  background: rgba(0,0,0,0.6);
+}
+.floating-testimoni {
+  position: fixed;
+  bottom: 40px; /* Semakin kecil, makin ke bawah */
+  left: 20px;
+  background-color: #cde3e6;
+  color: #1f2937;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 0.85rem; /* Lebih kecil */
+  max-width: 220px; /* Lebih sempit */
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.floating-testimoni.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.faq-section {
+  max-width: 800px;
+  margin: auto;
+  background: #90aac7;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 40px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.faq-question {
+  font-weight: 600;
+  color: #8db5cf;
+  position: relative;
+  padding-right: 20px;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+  content: '-';
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  color: #fffeff;
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* Sesuaikan tinggi maksimal jawaban */
+}
+
+    footer {
+      background: #e98aa1;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">INTAN JASA KEBUTUHAN SOSMED</div>
+    <h1>Layanan Followers Aman, Cepat & Terpercaya</h1>
+    <p>Instagram • TikTok </p>
+  </header>
+  <section>
+  <h2 class="section-title"> JASA YG TERSEDIA</h2>
+</section>
+
+<section>
+<p style="text-align: center; font-family: 'Poppins', sans-serif; margin-top: 24px; font-size: 16px; color: #333;">
+  Sebelum join, silakan cek juga story dan sorotan di akun 
+  <a href="https://www.instagram.com/vedbisnis" target="_blank"
+     style="display: inline-block; padding: 6px 14px; margin-left: 8px; background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); color: #fff; font-weight: 500; border-radius: 8px; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: all 0.3s ease;">
+    IG resmi kami
+  </a>
+</p></section>]
+<center><img src="6150033108334921511_121.jpg"  alt="w" style="max-width: 90%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"></center>
+<section>
+    <h2 class="section-title"> Daftar Layanan & Harga</h2>
+    <div class="prices">
+<div class="price-card">
+        <h3>Followers TikTok</h3>
+        <ul>
+          <li>100 followers - Rp 9K</li>
+          <li>200 followers - Rp 13K</li>
+        
+          <li>500 followers - Rp 24K</li>
+      
+          <li>1000 followers - Rp 40K</li>
+        
+        </ul>
+        <button onclick="window.location.href='https://api.whatsapp.com/send?phone=+6287720343006qqq'">Pesan Sekarang</button>
+     <p style="font-size: 0.9rem; color: #d1d5db; margin-top: 8px;">✅ Tanpa password • 🔒 100% Aman • 💯 Terpercaya</p>
+
+      </div>
+      <div class="price-card">
+        <h3>Like TikTok / Instagram</h3>
+        <ul>
+      
+          <li>1000 like - Rp 3K</li>
+        
+          <li>5000 like - Rp 7K</li>
+          <li>10.000 like - Rp 12K</li>
+        </ul>
+        <button onclick="window.location.href='https://api.whatsapp.com/send?phone=+6287720343006qqq'">Pesan Sekarang</button>
+      <p style="font-size: 0.9rem; color: #d1d5db; margin-top: 8px;">✅ Tanpa password • 🔒 100% Aman • 💯 Terpercaya</p>
+
+      </div>
+
+      
+ <div class="price-card">
+        <h3>Instagram Views</h3>
+        <p>Garansi</p>
+        <ul>
+        
+          <li>10.000 views - Rp 6K</li>
+
+          <li>50.000 views - Rp 18K</li>
+                    <li>100.000 views - Rp 34K</li>
+        </ul>
+                <p>No Garansi</p>
+        <ul>
+        
+          <li>10.000 views - Rp 3K</li>
+
+          <li>50.000 views - Rp 7K</li>
+                    <li>100.000 views - Rp 12K</li>
+        </ul>
+        <button onclick="window.location.href='https://api.whatsapp.com/send?phone=+6287720343006qqq'">Pesan Sekarang</button>
+      <p style="font-size: 0.9rem; color: #d1d5db; margin-top: 8px;">✅ Tanpa password • 🔒 100% Aman • 💯 Terpercaya</p>
+
+      </div>
+<div class="price-card">
+        <h3>Followers Instagram</h3>
+        <ul>
+          <li>100 followers - Rp 8K</li>
+            <li>200 followers - Rp 11K</li>
+              <li>500 followers - Rp 20K</li>
+                <li>1.000 followers - Rp 30K</li>
+                
+
+        </ul>
+        <button onclick="window.location.href='https://api.whatsapp.com/send?phone=+6287720343006qqq'">Pesan Sekarang</button>
+      <p style="font-size: 0.9rem; color: #d1d5db; margin-top: 8px;">✅ Tanpa password • 🔒 100% Aman • 💯 Terpercaya</p>
+
+      </div>
+      <div class="price-card">
+        <h3>Followers Facebook</h3>
+        <ul>
+          <li>100 Followers - Rp 7K</li>
+           <li>200 Followers - Rp 10K</li>
+            <li>300 Followers - Rp 13K</li>
+             <li>500 Followers - Rp 16K</li>
+              <li>1.000 Followers - Rp 26K</li>
+        </ul>
+        <button onclick="window.location.href='https://api.whatsapp.com/send?phone=+6287720343006qqq'">Pesan Sekarang</button>
+     <p style="font-size: 0.9rem; color: #d1d5db; margin-top: 8px;">✅ Tanpa password • 🔒 100% Aman • 💯 Terpercaya</p>
+
+      </div>
+<div class="price-card">
+        <h3>TikTok Followers</h3>
+        <ul>
+          <li>200 followers - Rp 20K</li>
+          <li>500 followers - Rp 35K</li>
+          <li>1000 followers - Rp 60K</li>
+          <li>2000 followers - Rp 110K</li>
+          <li>5000 followers - Rp 235K</li>
+        </ul>
+   <button onclick="window.location.href='https://api.whatsapp.com/send?phone=+6287720343006qqq'">Pesan Sekarang</button>
+     <p style="font-size: 0.9rem; color: #d1d5db; margin-top: 8px;">✅ Tanpa password • 🔒 100% Aman • 💯 Terpercaya</p>
+</div>
+      <div class="price-card">
+        <h3>Followers Grup Facebook</h3>
+        <ul>
+          <li>100 Followers - Rp 8K</li>
+          <li>200 Followers - Rp 11K</li>
+           <li>500 Followers - Rp 20K</li>
+            <li>1.000 Followers - Rp 30K</li>
+            
+        </ul>
+        <button onclick="window.location.href='https://api.whatsapp.com/send?phone=+6287720343006qqq'">Pesan Sekarang</button>
+      <p style="font-size: 0.9rem; color: #d1d5db; margin-top: 8px;">✅ Tanpa password • 🔒 100% Aman • 💯 Terpercaya</p>
+
+      </div>
+    </div>
+     
+</div>
+  </section>
+  <section>
+    <h1 style="text-align: center;">Sponsor Giveaway</h1>
+  
+<center><img src="6150033108334921511_121.jpg" 
+       alt="w" 
+       style="max-width: 90%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"></center></section>
+  <section class="section">
+    <h2 class="section-title">💡 Kenapa Beli Followers di ZHA STORE</h2>
+    <ul style="line-height: 1.8; background: #e0ecff; padding: 20px; border-radius: 12px; max-width: 800px; margin: auto; color: #1e3a8a;">
+      <li>✔ Meningkatkan kredibilitas akun secara instan</li>
+      <li>✔ Membuka peluang kerjasama dengan brand</li>
+      <li>✔ Meningkatkan kepercayaan dari calon pembeli/followers</li>
+      <li>✔ Proses cepat, tanpa password</li>
+      <li>✔ Support WA responsif</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📝 Catatan Penting</h2>
+    <ul style="line-height: 1.8; background: #e0ecff; padding: 20px; border-radius: 12px; max-width: 800px; margin: auto; color: #92400e;">
+      <li>⚠ Hanya perlu username atau link postingan</li>
+      <li>⚠ Jangan private akun selama proses berjalan</li>
+      <li>⚠ Ada promo/tawaran khusus tiap pembelian</li>
+      <li>⚠ 100% aman dan terbukti</li>
+    
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📸 Testimoni Pelanggan</h2>
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <div class="slide"><img src="testimoni1.jpg" alt="Testimoni 1"></div>
+        <div class="slide"><img src="testimoni2.jpg" alt="Testimoni 2"></div>
+        <div class="slide"><img src="testimoni3.jpg" alt="Testimoni 3"></div>
+        <div class="slide"><img src="testimoni4.jpg" alt="Testimoni 3"></div>
+        <div class="slide"><img src="testimoni5.jpg" alt="Testimoni 3"></div>
+      </div>
+      <div class="slider-buttons">
+        <button onclick="prevSlide()">‹</button>
+        <button onclick="nextSlide()">›</button>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section" style="text-align: center;">
+  <h2 class="section-title">⭐ Rating Pengguna</h2>
+  <p style="font-size: 1.2rem; color: #1e3a8a;">4.9 dari 5 bintang (108+ review)</p>
+  <p style="font-size: 2rem; color: gold;">★★★★★</p>
+</section>
+<section>
+    <h2 class="section-title"> Bukti Pembayaran</h2> 
+    <h2 class="section-title" > <small style="color: #000000;">Small Order</small></h2>
+    <div class="slider-container">
+      <div class="slider" id="slider1">
+        <div class="slide"><img src="m1.jpg" alt="Testimoni 1"></div>
+        <div class="slide"><img src="m2.jpg" alt="Testimoni 2"></div>
+        <div class="slide"><img src="m4.jpg" alt="Testimoni 3"></div>
+        <div class="slide"><img src="m5.jpg" alt="Testimoni 3"></div>
+        <div class="slide"><img src="m6.jpg" alt="Testimoni 3"></div>
+        <div class="slide"><img src="m7.jpg" alt="Testimoni 3"></div>
+        <div class="slide"><img src="m8.jpg" alt="Testimoni 3"></div>
+        <div class="slide"><img src="m9.jpg" alt="Testimoni 3"></div>
+      </div>
+       <div class="slider-buttons">
+      <div class="slider-buttons">
+  <button onclick="prevSlide1()">‹</button>
+  <button onclick="nextSlide1()">›</button>
+</div>
+  </section>
+  <section class="section">
+  <h2 class="section-title"> <small style="color: rgb(0, 0, 0);">📦 Big Order</small></h2> 
+  <div class="slider-container">
+    <div class="slider" id="slider2">
+      <div class="slide"><img src="b1.jpg" alt="Big Order 1"></div>
+      <div class="slide"><img src="b2.jpg" alt="Big Order 2"></div>
+      <div class="slide"><img src="b3.jpg" alt="Big Order 3"></div>
+      <div class="slide"><img src="b4.jpg" alt="Big Order 4"></div>
+      <div class="slide"><img src="b5.jpg" alt="Big Order 5"></div>
+      <div class="slide"><img src="b6.jpg" alt="Big Order 6"></div>
+    </div>
+    <div class="slider-buttons">
+      <button onclick="prevSlide2()">‹</button>
+      <button onclick="nextSlide2()">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">❓ Pertanyaan yang Sering Diajukan</h2>
+  <div class="faq-section">
+    <div class="faq-item">
+      <div class="faq-question">Apakah aman membeli followers?</div>
+      <div class="faq-answer">Ya, layanan kami 100% aman. Tidak memerlukan password dan sudah terbukti digunakan oleh ribuan pengguna.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Kapan followers masuk setelah bayar?</div>
+      <div class="faq-answer">Rata-rata followers masuk dalam 15–60 menit setelah pembayaran dikonfirmasi.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Kalau akun di-private bagaimana?</div>
+      <div class="faq-answer">Akun harus dalam keadaan publik saat proses pengisian followers berlangsung agar sistem dapat bekerja.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Bisa bayar lewat apa saja?</div>
+      <div class="faq-answer">Kami menerima pembayaran melalui DANA, BCA, dan beberapa e-wallet lainnya. Cukup chat kami di WhatsApp.</div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    &copy; 2025 INTAN FOLLOWERS
+  </footer>
+
+  <script>
+    let currentIndex = 0;
+    const slider = document.getElementById('slider');
+    const totalSlides = slider.children.length;
+
+    function showSlide(index) {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 3500);
+
+    const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+// FAQ Accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});
+
+  </script>
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Kembali ke atas">↑</button>
+<div id="floatingTestimoni" class="floating-testimoni"></div>
+<script>
+  const testimoniList = [
+    "⭐ \"Followers langsung naik 1000 dalam 60 menit!\" – @rani_shop",
+    "⭐ \"Nggak nyangka semurah ini bisa dapet banyak banget.\" – @jualanku.id",
+    "⭐ \"Fast respon, prosesnya cepat, aman banget!\" – @kuyfollower",
+    "⭐ \"Udah 3x order, selalu puas sama hasilnya.\" – @tokoonlinecepat",
+    "⭐ \"Likes dan views nambah semua, mantap!\" – @dailyfashion"
+  ];
+
+  const floatingBox = document.getElementById("floatingTestimoni");
+  let testiIndex = 0;
+
+  function showTestimoni() {
+    floatingBox.classList.remove("show"); // hilangkan dulu
+    setTimeout(() => {
+      floatingBox.textContent = testimoniList[testiIndex];
+      floatingBox.classList.add("show");
+      testiIndex = (testiIndex + 1) % testimoniList.length;
+    }, 500);
+  }
+
+  setInterval(showTestimoni, 5000); // ganti testimoni tiap 5 detik
+  window.onload = showTestimoni;
+</script>
+<script>
+  
+  // Slider 2: Bukti Pembayaran
+  let currentSlide1 = 0;
+  const slides1 = document.querySelectorAll("#slider1 .slide");
+
+  function showSlide1(index) {
+    const totalSlides1 = slides1.length;
+    if (index >= totalSlides1) currentSlide1 = 0;
+    else if (index < 0) currentSlide1 = totalSlides1 - 1;
+    else currentSlide1 = index;
+
+    const offset = -currentSlide1 * 100;
+    document.getElementById("slider1").style.transform = `translateX(${offset}%)`;
+  }
+
+  function nextSlide1() {
+    showSlide1(currentSlide1 + 1);
+  }
+
+  function prevSlide1() {
+    showSlide1(currentSlide1 - 1);
+  }
+  
+    setInterval(nextSlide1, 2800);
+</script>
+<script>
+  // --- Slider Big Order ---
+  let currentSlide2 = 0;
+  const slides2 = document.querySelectorAll("#slider2 .slide");
+
+  function showSlide2(index) {
+    const totalSlides2 = slides2.length;
+    currentSlide2 = (index + totalSlides2) % totalSlides2;
+    document.getElementById("slider2").style.transform = `translateX(${-currentSlide2 * 100}%)`;
+  }
+
+  function nextSlide2() {
+    showSlide2(currentSlide2 + 1);
+  }
+
+  function prevSlide2() {
+    showSlide2(currentSlide2 - 1);
+  }
+
+  // Auto Slide untuk Big Order
+  setInterval(nextSlide2, 3000); // ganti setiap 5 detik
+</script>
+
+</body>
+</html>
